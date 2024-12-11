@@ -9,11 +9,11 @@ const products = [
     colors: [
       {
         code: "black",
-        img: "../image/air.png",
+        img: "image/air.png",
       },
       {
         code: "darkblue",
-        img: "../image/air2.png",
+        img: "image/air2.png",
       },
     ],
   },
@@ -24,11 +24,11 @@ const products = [
     colors: [
       {
         code: "lightgray",
-        img: "../image/jordan.png",
+        img: "image/jordan.png",
       },
       {
         code: "green",
-        img: "../image/jordan2.png",
+        img: "image/jordan2.png",
       },
     ],
   },
@@ -39,11 +39,11 @@ const products = [
     colors: [
       {
         code: "lightgray",
-        img: "../image/blazer.png",
+        img: "image/blazer.png",
       },
       {
         code: "green",
-        img: "../image/blazer2.png",
+        img: "image/blazer2.png",
       },
     ],
   },
@@ -54,11 +54,11 @@ const products = [
     colors: [
       {
         code: "black",
-        img: "../image/crater.png",
+        img: "image/crater.png",
       },
       {
         code: "lightgray",
-        img: "../image/crater2.png",
+        img: "image/crater2.png",
       },
     ],
   },
@@ -69,11 +69,11 @@ const products = [
     colors: [
       {
         code: "gray",
-        img: "../image/hippie.png",
+        img: "image/hippie.png",
       },
       {
         code: "black",
-        img: "../image/hippie2.png",
+        img: "image/hippie2.png",
       },
     ],
   },
