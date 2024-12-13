@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Dela+Gothic+One&family=Barlow:wght@400;500;600;700;800;900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    height: 100vh;
+    width: 100vw;
+    font-family: "Barlow", sans-serif;
+    overflow: hidden;
+    background: #7A99AD;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+nav{
+    position: relative;
+    z-index: 100;
+    width: 5%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    color: #fff;
+    font-size: 18px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo{
+    font-family: "Dela Gothic One", sans-serif;
+    font-size: 20px;
+    color: #304B5B;
+}
+
+.socials{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.container{
+    width: 95%;
+    height: 100%;
+    margin-left: auto;
+}
+
+.slider{
+    width: 100%;
+    height: 100%;
+}
+
+.slider .swiper-slide{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.bg-light,.bg-dark{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    z-index: -1;
+}
+
+.bg-light{
+    left: 0;
+    background: #7A99AD;
+}
+
+.bg-dark{
+    right: 0;
+    background: #6b889a;
+}
+
+.slider .img{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-70%);
+}
+
+.slider .img img{
+    height: 550px;
+    width: 550px;
+    object-fit: contain;
+}
+
+.slider .heading-light{
+    font-size: 150px;
+    font-family: "Dela Gothic One", sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    color: #8BAABC;
+    font-weight: bolder;
+    text-shadow: -5px 5px 10px rgba(0,0,0,0.1);
+}
+
+.slider .heading-dark{
+    font-size: 130px;
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-shadow: -5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.slider .wave{
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.slider .wave img{
+    width: 900px;
+    height: 100px;
+}
+
+.slider .title{
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    margin-top: -10px;
+}
+
+.slider .price{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 50px;
+    font-family: "Dela Gothic One";
+    color: #304B5B;
+}
+
+.slider button{
+    display: block;
+    margin-top: 20px;
+    margin-inline: auto;
+    padding: 12px 50px;
+    font-family: "Dela Gothic One", sans-serif;
+    background: #7FA0B5;
+    outline: none;
+    font-size: 17px;
+    border: 2px solid #b2c2cc;
+    color: #304b5b;
+    cursor: pointer;
+}
+
+.specs{
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    padding: 20px 30px;
+    width: 200px;
+    background: #6b889a;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: -1;
+    color: #d0e1ec;
+    padding-left: 60px;
+}
+
+.spec p{
+    font-weight: 500;
+    font-size: 24px;
+    text-shadow: -1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.spec span{
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+.specs::before{
+    content: "SPECS";
+    position: absolute;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    top: -20px;
+    left: 10px;
+    font-family: "Dela Gothic One", sans-serif;
+    color: #304B5B;
+    text-shadow: -1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.thumbs-2{
+    position: absolute;
+    height: 300px;
+    width: 400px;
+    bottom: 0;
+    right: 0;
+}
+
+.thumbs-2 .swiper-slide{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    position: relative;
+}
+
+.thumbs-2 .img img{
+    height: 400px;
+    width: 400px;
+    object-fit: contain;
+    margin-left: 200px;
+}
+
+.thumbs-2 .title{
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+}
+
+.thumbs-2 .title span{
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: -1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.thumbs-2 .title p{
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    font-family: "Dela Gothic One", sans-serif;
+    text-shadow: -1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.thumbs-2 .icon{
+    font-size: 30px;
+    position: absolute;
+    color: #fff;
+    z-index: 10;
+    top: 10px;
+    right: -10px;
+}
+
+.thumbs-2 .swiper-slide-active {
+  display: none !important;
+}
+
+.thumbs-2 .swiper-slide-active:last-child{
+    display: grid !important;
+}
+
+.thumbs-1{
+    position: absolute;
+    top: 0;
+    width: 10%;
+    height: 100%;
+    z-index: 100;
+    box-shadow: 10px 0px 20px rgba(0,0,0,0.1);
+}
+
+.thumbs-1 .swiper-slide{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.thumbs-1 .img img{
+    height: 90%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.thumbs-1 .swiper-slide-active{
+    background: linear-gradient(to right, rgba(0,0,0,0.2), transparent);
+}
