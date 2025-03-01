@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     height: 100vh;
     width: 100vw;
     font-family: "Oswald", sans-serif;
+    overflow-x: hidden;
 }
 
-main{
+main {
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -21,14 +22,17 @@ main{
     background: #18D04E;
 }
 
-spline-viewer{
+spline-viewer {
     scale: 1.2;
     position: absolute;
     inset: 0;
     z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.content{
+.content {
     position: relative;
     z-index: 3;
     height: 100%;
@@ -38,13 +42,13 @@ spline-viewer{
     flex-direction: column;
 }
 
-.logo{
+.logo {
     font-size: 30px;
     font-weight: 600;
     padding-left: 30px;
 }
 
-.caption{
+.caption {
     margin-top: auto;
     font-family: "Poppins", sans-serif;
     padding: 20px 50px;
@@ -60,18 +64,18 @@ spline-viewer{
     pointer-events: all;
 }
 
-.heading{
+.heading {
     font-size: 40px;
     font-weight: 700;
 }
 
-p{
+p {
     margin-top: 10px;
     font-size: 14px;
     opacity: 0.8;
 }
 
-button{
+button {
     margin-top: 20px;
     padding: 10px 40px;
     border-radius: 20px;
@@ -85,7 +89,62 @@ button{
     font-size: 12px;
 }
 
-button:hover{
+button:hover {
     background: #000;
     color: #fff;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    spline-viewer {
+        scale: 1;
+        width: 100vw;
+        height: 50vh;
+        top: 40%;
+    }
+
+    .logo {
+        font-size: 24px;
+        padding-left: 20px;
+    }
+
+    .caption {
+        width: 90%;
+        padding: 20px;
+        margin: 0 auto;
+        border-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .heading {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px 40px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 24px;
+    }
+    
+    .caption {
+        padding: 15px;
+        width: 95%;
+    }
+    
+    spline-viewer {
+        height: 40vh;
+        top: 35%;
+    }
 }
