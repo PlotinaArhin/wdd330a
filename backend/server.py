@@ -236,6 +236,10 @@ async def create_question(question: QuestionCreate, current_user: User = Depends
 @api_router.get("/questions", response_model=List[Question])
 async def get_questions(current_user: User = Depends(get_admin_user)):
     questions = await db.questions.find().to_list(1000)
+    # Remove MongoDB ObjectId from each question
+    for question in questions:
+        if "_id" in question:
+            del question["_id"]
     return [Question(**q) for q in questions]
 
 @api_router.delete("/questions/{question_id}")
