@@ -6,13 +6,23 @@ from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, json
 from typing import List, Optional, Dict, Any
 import uuid
 from datetime import datetime, timedelta
 import jwt
 import bcrypt
 from enum import Enum
+from bson.objectid import ObjectId
+
+# Custom JSON encoder to handle ObjectId
+class CustomJSONEncoder(json.encoder.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, ObjectId):
+            return str(obj)
+        return super().default(obj)
+
+json.encoder.JSONEncoder = CustomJSONEncoder
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
