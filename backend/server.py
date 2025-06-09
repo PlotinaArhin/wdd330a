@@ -199,6 +199,10 @@ async def login(user_credentials: UserLogin):
         raise HTTPException(status_code=401, detail="Invalid credentials")
     
     access_token = create_access_token(data={"sub": user["username"]})
+    
+    # Remove MongoDB ObjectId and password from response
+    if "_id" in user:
+        del user["_id"]
     user.pop("password")
     
     return {"access_token": access_token, "token_type": "bearer", "user": user}
