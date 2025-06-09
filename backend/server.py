@@ -178,7 +178,13 @@ async def register(user: UserCreate):
     user_dict = user.dict()
     user_dict["password"] = hashed_password
     user_obj = User(**user_dict)
-    await db.users.insert_one(user_obj.dict())
+    user_data = user_obj.dict()
+    
+    # Remove MongoDB ObjectId if it exists and use our custom id
+    if "_id" in user_data:
+        del user_data["_id"]
+    
+    await db.users.insert_one(user_data)
     
     # Create token
     access_token = create_access_token(data={"sub": user.username})
