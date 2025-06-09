@@ -224,7 +224,13 @@ async def create_question(question: QuestionCreate, current_user: User = Depends
     question_dict = question.dict()
     question_dict["created_by"] = current_user.id
     question_obj = Question(**question_dict)
-    await db.questions.insert_one(question_obj.dict())
+    question_data = question_obj.dict()
+    
+    # Remove MongoDB ObjectId if it exists
+    if "_id" in question_data:
+        del question_data["_id"]
+        
+    await db.questions.insert_one(question_data)
     return question_obj
 
 @api_router.get("/questions", response_model=List[Question])
