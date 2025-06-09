@@ -267,6 +267,10 @@ async def create_quiz(quiz: QuizCreate, current_user: User = Depends(get_admin_u
 @api_router.get("/quizzes", response_model=List[Quiz])
 async def get_quizzes(current_user: User = Depends(get_current_user)):
     quizzes = await db.quizzes.find({"is_active": True}).to_list(1000)
+    # Remove MongoDB ObjectId from each quiz
+    for quiz in quizzes:
+        if "_id" in quiz:
+            del quiz["_id"]
     return [Quiz(**q) for q in quizzes]
 
 @api_router.get("/quizzes/{quiz_id}")
