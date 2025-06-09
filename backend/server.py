@@ -255,7 +255,13 @@ async def create_quiz(quiz: QuizCreate, current_user: User = Depends(get_admin_u
     quiz_dict = quiz.dict()
     quiz_dict["created_by"] = current_user.id
     quiz_obj = Quiz(**quiz_dict)
-    await db.quizzes.insert_one(quiz_obj.dict())
+    quiz_data = quiz_obj.dict()
+    
+    # Remove MongoDB ObjectId if it exists
+    if "_id" in quiz_data:
+        del quiz_data["_id"]
+        
+    await db.quizzes.insert_one(quiz_data)
     return quiz_obj
 
 @api_router.get("/quizzes", response_model=List[Quiz])
